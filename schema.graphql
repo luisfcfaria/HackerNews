@@ -1,5 +1,6 @@
 type Query {
     news: [News]
+    newsById(objectID: Int!): News
 }
 
 type News {

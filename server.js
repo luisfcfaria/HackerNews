@@ -3,7 +3,7 @@ import cors from "cors";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 import { graphqlHTTP } from "express-graphql";
 import fs from "fs";
-import { frontPage } from "./datasource.js"
+import * as data from "./datasource.js"
 import { resolvers } from "./resolvers.js"
 
 const app = express();
@@ -21,7 +21,7 @@ const executableSchema = makeExecutableSchema({
 
 app.use("/graphql", graphqlHTTP({
     schema: executableSchema,
-    context: frontPage,
+    context: data,
     graphiql: true
 }))
 
