@@ -1,0 +1,21 @@
+type Query {
+    news: [News]
+}
+
+type News {
+    created_at: String
+    title: String
+    author: String
+    url: String
+    points: Int
+    num_comments: Int
+    _tags:[String]
+    comments: [Comment]
+}
+
+type Comment {
+    created_at: String
+    author: String
+    comment_text: String!
+    tags: [String]
+}
